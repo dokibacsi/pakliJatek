@@ -10,7 +10,8 @@ public class Gondolatolvaso {
     public static void main(String[] args) {
         kirak();
         kever();
-        kiir();
+        melyik();    
+        ezVolt();
     }
 
     public static void kirak() {
@@ -26,9 +27,12 @@ public class Gondolatolvaso {
 
     public static int melyik() {
 
-        int oszlop = 0;
-        while (oszlop < 1 || oszlop > 3) {
-            System.out.print("Hanyadik oszlopban van a kártya: ");
+        System.out.print("Melyik oszlopot választod: ");
+        int oszlop = sc.nextInt();
+        
+        while(oszlop < 1 || oszlop > 3){
+            System.out.println("Az általad megadott számhoz nem tartozik oszlop! \nPróbáld újra!\n");
+            System.out.print("Melyik oszlopot választod: ");
             oszlop = sc.nextInt();
         }
         return oszlop - 1;
@@ -39,7 +43,7 @@ public class Gondolatolvaso {
 
     }
 
-    public static void kiir() {
+    public static void ezVolt() {
         int j = 1;
         for (int i = 0; i < 7; i++) {
             String sor = "";
