@@ -12,6 +12,7 @@ public class Gondolatolvaso {
         ezVolt();
         int valasztas = melyik();
         kever(valasztas);
+        ezVolt();
     }
 
     private static void kirak() {
@@ -49,11 +50,13 @@ public class Gondolatolvaso {
                 pakli[1] = pakli[20];
                 break;
             case 2:
-                for (int i = 0; i < 7; i++) {
+                String temp = pakli[19];
+                for (int i = 2; i < 7; i++) {
                     pakli[i] = pakli[19 - ( i - 1 ) * 3];
                     pakli[i + 7] = pakli[20 - ( i - 1 ) * 3];
                     pakli[i + 14] = pakli[21 - ( i - 1 ) * 3];
                 }
+                pakli[1] = temp;
                 break;
             case 3:
                 break;
