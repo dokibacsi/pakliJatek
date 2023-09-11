@@ -1,1 +1,1 @@
-Franyó Krisztián | Katona Valentin | Keresztes Hunor
+Katona Valentin | Keresztes Hunor
