@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Gondolatolvaso {
 
-    static Scanner sc = new Scanner(System.in);
-    static String[] pakli = new String[22];
+    private static final Scanner sc = new Scanner(System.in);
+    private static String[] pakli = new String[22];
 
     public static void main(String[] args) {
         kirak();
@@ -14,7 +14,7 @@ public class Gondolatolvaso {
         ezVolt();
     }
 
-    public static void kirak() {
+    private static void kirak() {
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
         int i = 1;
@@ -25,7 +25,7 @@ public class Gondolatolvaso {
         }
     }
 
-    public static int melyik() {
+    private static int melyik() {
 
         System.out.print("Melyik oszlopot választod: ");
         int oszlop = sc.nextInt();
@@ -39,11 +39,11 @@ public class Gondolatolvaso {
 
     }
 
-    public static void kever() {
+    private static void kever() {
 
     }
 
-    public static void ezVolt() {
+    private static void ezVolt() {
         int j = 1;
         for (int i = 0; i < 7; i++) {
             String sor = "";
