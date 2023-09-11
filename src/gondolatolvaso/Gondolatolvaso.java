@@ -45,6 +45,8 @@ public class Gondolatolvaso {
         int oszlop = sc.nextInt();
         
         while(oszlop < 1 || oszlop > 3){
+            System.out.println("Az általad megadott számhoz nem tartozik oszlop! \nPróbáld újra!\n");
+            System.out.print("Melyik oszlopot választod: ");
             oszlop = sc.nextInt();
         }
         return oszlop - 1;
