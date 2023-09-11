@@ -9,10 +9,12 @@ public class Gondolatolvaso {
 
     public static void main(String[] args) {
         kirak();
-        ezVolt();
-        int valasztas = melyik();
-        kever(valasztas);
-        ezVolt();
+        for (int i = 0; i < 3; i++) {
+            ezVolt();
+            int valasztas = melyik();
+            kever(valasztas);
+        }
+        System.out.println("Erre a kártyára gondoltál: " + pakli[11]);
     }
 
     private static void kirak() {
@@ -36,36 +38,35 @@ public class Gondolatolvaso {
             System.out.print("Melyik oszlopot választod: ");
             oszlop = sc.nextInt();
         }
-        return oszlop - 1;
+        return oszlop;
 
     }
     private static void kever(int szam) {
+        String temp = pakli[1];
         switch (szam) {
             case 1:
-                
-                String temp = pakli[20];
-                for (int i = 2; i < 7; i++) { //fontos h itt kettessel kezdődik a számolás és a ciklus után csináljuk az egyest
+                for (int i = 1; i <= 7; i++) {
                     pakli[i] = pakli[20 - (i - 1) * 3];
-                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
                     pakli[i + 14] = pakli[21 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
                 }
-                pakli[1] = pakli[20];
+                pakli[14] = temp;
                 break;
             case 2:
-                temp = pakli[19];
-                for (int i = 2; i < 7; i++) {
-                    pakli[i] = pakli[19 - ( i - 1 ) * 3];
-                    pakli[i + 7] = pakli[20 - ( i - 1 ) * 3];
-                    pakli[i + 14] = pakli[21 - ( i - 1 ) * 3];
+                for (int i = 1; i <= 7; i++) {
+                    pakli[i + 14] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[21 - (i - 1) * 3];
+                    pakli[i] = pakli[19 - (i - 1) * 3];
                 }
-                pakli[1] = temp;
+                pakli[7] = temp;
                 break;
             case 3:
-                for (int i = 1; i < 7; i++) {
+                for (int i = 1; i <= 7; i++) {
+                    pakli[i + 7] = pakli[20 - (i - 1) * 3];
                     pakli[i] = pakli[21 - (i - 1) * 3];
-                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
-                    pakli[i + 14] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[19 - (i - 1) * 3];
                 }
+                pakli[21] = temp;
                 break;
         }
     }
