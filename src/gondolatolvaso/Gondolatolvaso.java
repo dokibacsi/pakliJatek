@@ -41,7 +41,7 @@ public class Gondolatolvaso {
 
     public static int melyik() {
 
-        System.out.print("Melyik oszlopot választod: ");
+        System.out.print("Melyik oszlopot választod(1-3): ");
         int oszlop = sc.nextInt();
         
         while(oszlop < 1 || oszlop > 3){
@@ -54,7 +54,15 @@ public class Gondolatolvaso {
     }
 
     public static void kever() {
-
+        switch(2){
+            case 1:
+                for (int i = 0; i < 7; i++) {
+                    pakli[i] = pakli[19 - ( i - 1 ) * 3];
+                    pakli[i + 7] = pakli[20 - ( i - 1 ) * 3];
+                    pakli[i + 14] = pakli[21 - ( i - 1 ) * 3];
+                }
+                
+        }
     }
 
     public static void ezVolt() {
