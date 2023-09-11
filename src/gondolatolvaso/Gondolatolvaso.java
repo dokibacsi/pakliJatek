@@ -47,7 +47,7 @@ public class Gondolatolvaso {
         while(oszlop < 1 || oszlop > 3){
             oszlop = sc.nextInt();
         }
-        return oszlop;
+        return oszlop - 1;
 
     }
 
