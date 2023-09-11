@@ -1,36 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package gondolatolvaso;
 
 import java.util.Scanner;
 
 public class Gondolatolvaso {
 
-    static Scanner sc = new Scanner(System.in);
-    static String[] pakli = new String[22];
+    private static final Scanner sc = new Scanner(System.in);
+    private static String[] pakli = new String[22];
 
     public static void main(String[] args) {
         kirak();
-        kever();
-        melyik();    
         ezVolt();
+        int valasztas = melyik();
+        kever(valasztas);
     }
 
-    public static void kirak() {
+    private static void kirak() {
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
-
-//        for (int i = 0; i < szinek.length; i++) {
-//            pakli[i] = "";
-//            for (int j = 0; j < ertek.length; j++) {
-//                //System.out.println(pakli[i]);
-//                pakli[i] += szinek[i] + " - " + ertek[j];
-//            }
-//
-//        }
-
         int i = 1;
         for (String szin : szinek) {
             for (int j = 0; i < 22 && j < ertek.length; j++) {
@@ -39,7 +25,7 @@ public class Gondolatolvaso {
         }
     }
 
-    public static int melyik() {
+    private static int melyik() {
 
         System.out.print("Melyik oszlopot választod(1-3): ");
         int oszlop = sc.nextInt();
@@ -52,22 +38,30 @@ public class Gondolatolvaso {
         return oszlop - 1;
 
     }
-
-    public static void kever() {
-        switch(2){
+    private static void kever(int szam) {
+        switch (szam) {
             case 1:
+                for (int i = 2; i < 7; i++) { //fontos h itt kettessel kezdődik a számolás és a ciklus után csináljuk az egyest
+                    pakli[i] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[21 - (i - 1) * 3];
+                }
+                pakli[1] = pakli[20];
+                break;
+            case 2:
                 for (int i = 0; i < 7; i++) {
                     pakli[i] = pakli[19 - ( i - 1 ) * 3];
                     pakli[i + 7] = pakli[20 - ( i - 1 ) * 3];
                     pakli[i + 14] = pakli[21 - ( i - 1 ) * 3];
                 }
-                
+                break;
+            case 3:
+                break;
         }
     }
 
-    public static void ezVolt() {
+    private static void ezVolt() {
         int j = 1;
-        
         for (int i = 0; i < 7; i++) {
             String sor = "";
             for (int k = 0; k < 3; k++) {
