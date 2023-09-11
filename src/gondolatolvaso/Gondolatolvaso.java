@@ -10,8 +10,8 @@ public class Gondolatolvaso {
     public static void main(String[] args) {
         kirak();
         kever();
-        melyik();    
         ezVolt();
+        int valasztas = melyik();
     }
 
     private static void kirak() {
@@ -40,7 +40,20 @@ public class Gondolatolvaso {
     }
 
     private static void kever() {
-
+        switch (melyik()) {
+            case 1:
+                for (int i = 2; i < 7; i++) { //fontos h itt kettessel kezdődik a számolás és a ciklus után csináljuk az egyest
+                    pakli[i] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[21 - (i - 1) * 3];
+                }
+                pakli[1] = pakli[20];
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
     }
 
     private static void ezVolt() {
