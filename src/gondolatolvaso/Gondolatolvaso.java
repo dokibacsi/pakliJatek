@@ -41,18 +41,19 @@ public class Gondolatolvaso {
     private static void kever(int szam) {
         switch (szam) {
             case 1:
+                String temp = pakli[20];
                 for (int i = 2; i < 7; i++) { //fontos h itt kettessel kezdődik a számolás és a ciklus után csináljuk az egyest
                     pakli[i] = pakli[20 - (i - 1) * 3];
                     pakli[i + 7] = pakli[19 - (i - 1) * 3];
                     pakli[i + 14] = pakli[21 - (i - 1) * 3];
                 }
-                pakli[1] = pakli[20];
+                pakli[1] = temp;
                 break;
             case 2:
                 for (int i = 0; i < 7; i++) {
-                    pakli[i] = pakli[19 - ( i - 1 ) * 3];
-                    pakli[i + 7] = pakli[20 - ( i - 1 ) * 3];
-                    pakli[i + 14] = pakli[21 - ( i - 1 ) * 3];
+                    pakli[i] = pakli[19 - (i - 1) * 3];
+                    pakli[i + 7] = pakli[20 - (i - 1) * 3];
+                    pakli[i + 14] = pakli[21 - (i - 1) * 3];
                 }
                 break;
             case 3:
