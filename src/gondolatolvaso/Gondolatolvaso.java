@@ -42,33 +42,31 @@ public class Gondolatolvaso {
 
     }
     private static void kever(int szam) {
-        String temp = pakli[1];
+        String[] temp = new String[22];
         switch (szam) {
             case 1:
                 for (int i = 1; i <= 7; i++) {
-                    pakli[i] = pakli[20 - (i - 1) * 3];
-                    pakli[i + 14] = pakli[21 - (i - 1) * 3];
-                    pakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    temp[i] = pakli[20 - (i - 1) * 3];
+                    temp[i + 7] = pakli[19 - (i - 1) * 3];
+                    temp[i + 14] = pakli[21 - (i - 1) * 3];
                 }
-                pakli[14] = temp;
                 break;
             case 2:
                 for (int i = 1; i <= 7; i++) {
-                    pakli[i + 14] = pakli[20 - (i - 1) * 3];
-                    pakli[i + 7] = pakli[21 - (i - 1) * 3];
-                    pakli[i] = pakli[19 - (i - 1) * 3];
+                    temp[i] = pakli[21 - (i - 1) * 3];
+                    temp[i + 7] = pakli[20 - (i - 1) * 3];
+                    temp[i + 14] = pakli[19 - (i - 1) * 3];
                 }
-                pakli[7] = temp;
                 break;
             case 3:
                 for (int i = 1; i <= 7; i++) {
-                    pakli[i + 7] = pakli[20 - (i - 1) * 3];
-                    pakli[i] = pakli[21 - (i - 1) * 3];
-                    pakli[i + 14] = pakli[19 - (i - 1) * 3];
+                    temp[i] = pakli[19 - (i - 1) * 3];
+                    temp[i + 7] = pakli[21 - (i - 1) * 3];
+                    temp[i + 14] = pakli[20 - (i - 1) * 3];
                 }
-                pakli[21] = temp;
                 break;
         }
+        pakli = temp;
     }
 
     private static void ezVolt() {
